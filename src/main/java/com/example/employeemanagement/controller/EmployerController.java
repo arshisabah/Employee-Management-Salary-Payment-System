@@ -28,8 +28,8 @@ public class EmployerController {
     }
 
     @GetMapping("/employers/{employerId}")
-    public ResponseEntity<EmployerResponse> getEmployer(@PathVariable Long employerId) {
-        return ResponseEntity.ok(employerService.getEmployer(employerId));
+    public ResponseEntity<List<EmployerResponse>> getEmployer(@PathVariable Long employerId) {
+        return ResponseEntity.ok(List.of(employerService.getEmployer(employerId)));
     }
 
     @GetMapping("/employers/{employerId}/employees")
